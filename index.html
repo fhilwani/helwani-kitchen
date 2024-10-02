@@ -6,12 +6,14 @@
     <meta name="description" content="Helwani Kitchen - Low-carb and keto American and Mediterranean classics.">
     <title>Helwani Kitchen | Keto & Low-Carb Bakery</title>
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- EmailJS integration -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
-	<script type="text/javascript">
-	    (function(){
-	        emailjs.init("GevZQzg9bLLOE3UK_");
-	    })();
-	</script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("YOUR_PUBLIC_KEY");  <!-- Replace with your EmailJS public key -->
+        })();
+    </script>
     
 </head>
 <body>
@@ -43,37 +45,37 @@
         </p>
     </section>
 
-	<section id="email-signup" class="section email-signup">
-	    <h2>Join Our Mailing List</h2>
-	    <p>Be the first to know about our menu updates and special offers. Sign up for our newsletter!</p>
-	
-		<form id="signupForm">
-		    <input type="email" name="email" id="email" placeholder="Enter your email" required>
-		    <input type="text" name="from_name" id="from_name" placeholder="Enter your name" required>
-		    <button type="submit" class="btn">Sign Up</button>
-		</form>
-	</section>
-	
-	<script>
-		document.getElementById('signupForm').addEventListener('submit', function(e) {
-		    e.preventDefault();
-	
-		    const email = document.getElementById('email').value;
-		    const from_name = document.getElementById('from_name').value;
-	
-		    // Send email using EmailJS
-		    emailjs.send("service_k25ix3m", "template_5qz553l", {
-		        to_name: "Helwani Kitchen", // Static value for the recipient
-		        from_name: from_name,
-		        message: `Hi, I am ${email} and I am a potential Helwani Kitchen customer!`
-		    })
-		    .then(function(response) {
-		        alert('Thank you for signing up!');
-		    }, function(error) {
-		        alert('Failed to send the email, please try again.');
-		    });
-		});
-	</script>
+    <!-- Email Signup Section -->
+    <section id="email-signup" class="section email-signup">
+        <h2>Join Our Mailing List</h2>
+        <p>Be the first to know about our menu updates and special offers. Sign up for our newsletter!</p>
+
+        <!-- Form for email submission -->
+        <form id="signupForm">
+            <input type="email" name="email" id="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+    </section>
+
+    <!-- JavaScript for email sending using EmailJS -->
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+
+            // Send email using EmailJS
+            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+                to_name: "Helwani Kitchen", // Static value for the recipient
+                message: `Hi, I am ${email} and I am a potential Helwani Kitchen customer!`
+            })
+            .then(function(response) {
+                alert('Thank you for signing up!');
+            }, function(error) {
+                alert('Failed to send the email, please try again.');
+            });
+        });
+    </script>
 
     <section id="instagram" class="section">
         <h2>Follow Us on Instagram</h2>
