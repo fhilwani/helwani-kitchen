@@ -11,7 +11,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
     <script type="text/javascript">
         (function(){
-            emailjs.init("YOUR_PUBLIC_KEY");  <!-- Replace with your EmailJS public key -->
+            emailjs.init("GevZQzg9bLLOE3UK_"); 
         })();
     </script>
     
@@ -39,7 +39,7 @@
     <section id="about" class="section about-section">
         <h2>About Helwani Kitchen</h2>
         <p>
-            Located in the heart of the Raleigh-Durham-Chapel Hill area in North Carolina, Helwani Kitchen is your local home bakery 
+            Located in the Raleigh-Durham-Chapel Hill area in North Carolina, Helwani Kitchen is your local home bakery 
             offering low-carb and keto-friendly versions of American and Mediterranean classics. Whether you crave a sweet or savory treat, 
             we bring a healthy twist to all our recipes without compromising on flavor.
         </p>
@@ -65,7 +65,7 @@
             const email = document.getElementById('email').value;
 
             // Send email using EmailJS
-            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+            emailjs.send("service_k25ix3m", "service_k25ix3m", {
                 to_name: "Helwani Kitchen", // Static value for the recipient
                 message: `Hi, I am ${email} and I am a potential Helwani Kitchen customer!`
             })
