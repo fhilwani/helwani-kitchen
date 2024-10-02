@@ -7,11 +7,11 @@
     <title>Helwani Kitchen | Keto & Low-Carb Bakery</title>
     <link rel="stylesheet" href="styles.css">
 
-    <!-- EmailJS script -->
+    <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
     <script type="text/javascript">
-        (function(){
-            emailjs.init("GevZQzg9bLLOE3UK_"); 
+        (function() {
+            emailjs.init("GevZQzg9bLLOE3UK_");  // Initialize with your public key
         })();
     </script>
 
@@ -56,24 +56,21 @@
         </form>
     </section>
 
-    <!-- EmailJS form handling -->
+    <!-- JavaScript for handling form submission and sending email -->
     <script>
         document.getElementById('signupForm').addEventListener('submit', function(e) {
-            e.preventDefault();  // Prevent the form from reloading the page
+            e.preventDefault();
 
             const email = document.getElementById('email').value;
 
-            // Template parameters to send to EmailJS
             const templateParams = {
                 to_name: "Helwani Kitchen",  // Static value for your business
                 from_name: email,  // The user's email as from_name
                 message: `Hi, I am ${email} and I am a potential Helwani Kitchen customer!`
             };
 
-            // Send email using EmailJS
-            emailjs.send("service_k25ix3m", "template_5qz553l", templateParams, {
-                publicKey: 'GevZQzg9bLLOE3UK_'
-            }).then(function(response) {
+            emailjs.send("service_k25ix3m", "template_5qz553l", templateParams)
+            .then(function(response) {
                 console.log('SUCCESS!', response.status, response.text);
                 alert('Thank you for signing up!');
             }, function(error) {
@@ -83,7 +80,6 @@
         });
     </script>
 
-    <!-- Instagram Section -->
     <section id="instagram" class="section">
         <h2>Follow Us on Instagram</h2>
         <p>Get a behind-the-scenes look at our bakery creations!</p>
@@ -93,11 +89,10 @@
         </a>
     </section>
 
-    <!-- Footer -->
     <footer id="contact" class="footer">
         <p>&copy; 2024 Helwani Kitchen. All Rights Reserved.</p>
         <p>Raleigh-Durham-Chapel Hill, North Carolina</p>
-        <a href="mailto:your-email@domain.com">Contact Us</a>
+        <a href="mailto:helwanikitchen@gmail.com">Contact Us</a>
     </footer>
 
 </body>
