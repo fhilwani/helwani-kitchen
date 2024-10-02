@@ -1,0 +1,76 @@
+# Eclipse specific files
+.project
+.classpath
+.settings/
+
+# macOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows specific files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Node modules (if you're using Node.js)
+node_modules/
+npm-debug.log
+yarn-error.log
+.pnpm-debug.log
+
+# Logs
+*.log
+logs/
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+bower_components/
+jspm_packages/
+
+# Temporary build files
+*.tmp
+*.swp
+*.swo
+*.bak
+*.tmp
+*.orig
+*.rej
+
+# SASS/SCSS cache
+.sass-cache/
+
+# Compiled source files (if using TypeScript, Babel, etc.)
+dist/
+out-tsc/
+build/
+
+# Coverage reports
+coverage/
+
+# Webstorm specific files
+.idea/
+
+# JetBrains IDE files
+.idea/
+*.iml
+*.iws
+
+# Environment variables
+.env
+.env.test
+.env.production
+
+# Ignore local configuration files
+*.local
+
+# VS Code settings and extensions
+.vscode/
+
+# Specific operating system swap or temporary files
+*.swp
+*.swo
+*.swn
+
