@@ -6,15 +6,15 @@
     <meta name="description" content="Helwani Kitchen - Low-carb and keto American and Mediterranean classics.">
     <title>Helwani Kitchen | Keto & Low-Carb Bakery</title>
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- EmailJS integration -->
+
+    <!-- EmailJS script -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
     <script type="text/javascript">
         (function(){
             emailjs.init("GevZQzg9bLLOE3UK_"); 
         })();
     </script>
-    
+
 </head>
 <body>
 
@@ -35,7 +35,7 @@
         <a href="#email-signup" class="btn">Join Our Mailing List</a>
     </section>
 
-    <!-- Enhanced About Section -->
+    <!-- About Helwani Kitchen -->
     <section id="about" class="section about-section">
         <h2>About Helwani Kitchen</h2>
         <p>
@@ -50,34 +50,40 @@
         <h2>Join Our Mailing List</h2>
         <p>Be the first to know about our menu updates and special offers. Sign up for our newsletter!</p>
 
-        <!-- Form for email submission -->
         <form id="signupForm">
             <input type="email" name="email" id="email" placeholder="Enter your email" required>
             <button type="submit" class="btn">Sign Up</button>
         </form>
     </section>
 
-    <!-- JavaScript for email sending using EmailJS -->
+    <!-- EmailJS form handling -->
     <script>
         document.getElementById('signupForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+            e.preventDefault();  // Prevent the form from reloading the page
 
             const email = document.getElementById('email').value;
 
-            // Send email using EmailJS
-            emailjs.send("service_k25ix3m", "template_5qz553l", {
-                to_name: "Helwani Kitchen", // This will populate {{to_name}} in the template
-                from_name: email,  // This will populate {{from_name}} in the template
+            // Template parameters to send to EmailJS
+            const templateParams = {
+                to_name: "Helwani Kitchen",  // Static value for your business
+                from_name: email,  // The user's email as from_name
                 message: `Hi, I am ${email} and I am a potential Helwani Kitchen customer!`
-            })
-            .then(function(response) {
+            };
+
+            // Send email using EmailJS
+            emailjs.send("service_k25ix3m", "template_5qz553l", templateParams, {
+                publicKey: 'GevZQzg9bLLOE3UK_'
+            }).then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
                 alert('Thank you for signing up!');
             }, function(error) {
+                console.log('FAILED...', error);
                 alert('Failed to send the email, please try again.');
             });
         });
     </script>
 
+    <!-- Instagram Section -->
     <section id="instagram" class="section">
         <h2>Follow Us on Instagram</h2>
         <p>Get a behind-the-scenes look at our bakery creations!</p>
@@ -87,6 +93,7 @@
         </a>
     </section>
 
+    <!-- Footer -->
     <footer id="contact" class="footer">
         <p>&copy; 2024 Helwani Kitchen. All Rights Reserved.</p>
         <p>Raleigh-Durham-Chapel Hill, North Carolina</p>
