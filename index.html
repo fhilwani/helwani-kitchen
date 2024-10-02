@@ -66,7 +66,8 @@
 
             // Send email using EmailJS
             emailjs.send("service_k25ix3m", "template_5qz553l", {
-                to_name: "Helwani Kitchen", // Static value for the recipient
+                to_name: "Helwani Kitchen", // This will populate {{to_name}} in the template
+                from_name: email,  // This will populate {{from_name}} in the template
                 message: `Hi, I am ${email} and I am a potential Helwani Kitchen customer!`
             })
             .then(function(response) {
